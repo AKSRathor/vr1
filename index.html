@@ -1,36 +1,49 @@
   <!DOCTYPE html>
-<html>
-<head>
-  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
-</head>
+  <html>
 
-<body style="margin : 0px; overflow: hidden;">
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+  </head>
 
-<a-scene device-orientation-permission-ui = "enabled:false" arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3">
-  <!-- <a-assets>
+  <body style="margin : 0px; overflow: hidden;">
+
+    <!-- <a-scene arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3"> -->
+      <a-scene arjs>
+      <a-assets>
     <a-asset-item id="robot" src="./robot/CesiumMan.gltf"></a-asset-item>
-  </a-assets> -->
+  </a-assets>
 
-  <!-- <a-marker type="barcode" value="0">
+      <!-- <a-marker type="barcode" value="0">
     <a-gltf-model src="#robot" animation-mixer></a-gltf-model>
   </a-marker> -->
 
-  <a-marker type="barcode" value="1">
-    <a-sphere color="#CCC"></a-sphere>
-  </a-marker>
-
+      <!-- <a-marker type="barcode" value = "0">
+      </a-marker> -->
+      <a-marker type="barcode" value="0">
+        <a-box color= "tomato"></a-box>
+        <!-- <a-sphere color="#CCC"></a-sphere> -->
+      </a-marker>
+      <a-marker type="pattern" url = "./unomark9.patt">
+        <a-box color= "tomato"></a-box>
+        <!-- <a-sphere color="#CCC"></a-sphere> -->
+      </a-marker>  
+      <a-marker type="pattern" url = "./unomark.patt">
+        <a-gltf-model rotation = "-90 0 0" src="#robot" animation-mixer></a-gltf-model>
+      </a-marker>   
+      <!-- 
   <a-marker type="barcode" value="2">
     <a-sphere color="green"></a-sphere>
   </a-marker>
 
   <a-marker type="barcode" value="3">
     <a-sphere color="blue"></a-sphere>
-  </a-marker>
+  </a-marker> -->
 
-  <a-entity camera></a-entity>
-</a-scene>
+      <a-entity camera></a-entity>
+    </a-scene>
 
-</body>
-</html>
+  </body>
+
+  </html>
